@@ -18,6 +18,8 @@ export class BusinessCardComponent {
   interests: string[];
   selected: number = -1;
   previousValue: string | null = null;
+  students = ['Mateusz']
+
 
   constructor() { 
     this.name = 'Joanna';
@@ -31,14 +33,17 @@ export class BusinessCardComponent {
     this.previousValue = this.interests[which];
   }
 
-  saveInterest(): void {
-    this.selected = -1;
-    this.previousValue = null;
-  }
-
+ 
   cancel(): void {
     if (this.selected > -1 && this.previousValue !== null) {
       this.interests[this.selected] = this.previousValue; 
     }
   }
+
+  studentMapping: { [k: string]: string} = {
+    '=0': 'Na liście nie ma żadnych studentów.',
+    '=1': 'Na liście jest # student.',
+    'other': 'Na liście jest # studentów.'
+  }
+
 }

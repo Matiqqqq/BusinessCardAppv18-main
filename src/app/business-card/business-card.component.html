@@ -28,6 +28,14 @@
             </label>
         </div>
 }
+
+
+    <p>{{ students.length | i18nPlural: studentMapping }}</p>
+  
+    <ul>
+      <li *ngFor="let student of students; let i = index">{{i+1}}. {{ student }}</li>
+    </ul>
+  
 </div>
 
 
